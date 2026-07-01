@@ -9,7 +9,9 @@ public class DialectController {
 
     @GetMapping("/dialect")
     public String getDialect(Model model) {
+
         // model.addAttribute(null, "");
-        return "dialect";
+
+        return "test-dialect";
     }
 }

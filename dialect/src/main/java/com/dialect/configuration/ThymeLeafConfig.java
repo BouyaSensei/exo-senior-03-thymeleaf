@@ -7,8 +7,11 @@ import com.dialect.StatusDialect;
 
 @Configuration
 public class ThymeLeafConfig {
+
     @Bean
     public StatusDialect statusdialect() {
         return new StatusDialect();
+
     }
+
 }

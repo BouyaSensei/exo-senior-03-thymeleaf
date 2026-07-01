@@ -2,19 +2,19 @@ package com.dialect;
 
 import java.util.Set;
 
-import org.thymeleaf.context.ITemplateContext;
-import org.thymeleaf.dialect.AbstractDialect;
+import org.thymeleaf.dialect.AbstractProcessorDialect;
 import org.thymeleaf.processor.IProcessor;
 
 import com.dialect.tags.StatusTagProcessor;
 
-public class StatusDialect extends AbstractDialect {
+public class StatusDialect extends AbstractProcessorDialect {
 
     public StatusDialect() {
-        super("StatusDialect");
+        super("StatusDialect", "tag", 1_000);
     }
 
-    public Set<IProcessor> getProcessors(ITemplateContext context) {
+    @Override
+    public Set<IProcessor> getProcessors(String dialectPrefix) {
         return Set.of(new StatusTagProcessor("tag"));
     }
 

@@ -12,7 +12,7 @@ public class StatusTagProcessor extends AbstractAttributeTagProcessor {
     private static final String ATTR_NAME = "badge";
     private static final int PRECEDENCE = 10000; // Priorité haute
 
-    public StatusTagProcessor(String dialectPrefix) {
+    public StatusTagProcessor(final String dialectPrefix) {
         super(
                 TemplateMode.HTML,
                 dialectPrefix,
@@ -35,9 +35,9 @@ public class StatusTagProcessor extends AbstractAttributeTagProcessor {
         String badgeHtml = String.format(
                 "<span class='badge badge-%s'>%s</span>",
                 type,
-                tag.getAttributeValue("tag:text"));
+                tag.getAttributeValue("tag:status"));
 
-        structureHandler.replaceWith(badgeHtml, true);
+        structureHandler.replaceWith(badgeHtml, false);
 
     }
 }
