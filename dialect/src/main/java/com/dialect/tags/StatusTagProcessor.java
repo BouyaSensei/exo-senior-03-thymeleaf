@@ -29,5 +29,15 @@ public class StatusTagProcessor extends AbstractAttributeTagProcessor {
             AttributeName attributeName, String attributeValue,
             IElementTagStructureHandler structureHandler) {
 
+        String type = attributeValue;
+
+        // On construit le nouveau HTML
+        String badgeHtml = String.format(
+                "<span class='badge badge-%s'>%s</span>",
+                type,
+                tag.getAttributeValue("tag:text"));
+
+        structureHandler.replaceWith(badgeHtml, true);
+
     }
 }
